@@ -19,6 +19,8 @@
 #
 # Everything in this directory will become public
 
+PRODUCT_COPY_FILES += \
+    device/moto/shamu/twrp.fstab:recovery/root/etc/twrp.fstab
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/moto/shamu-kernel/zImage-dtb
