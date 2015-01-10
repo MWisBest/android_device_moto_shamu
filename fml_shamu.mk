@@ -9,6 +9,9 @@ $(call inherit-product-if-exists, vendor/fml/config/common.mk)
 # Inherit device configuration
 $(call inherit-product, device/moto/shamu/aosp_shamu.mk)
 
+DEVICE_PACKAGE_OVERLAYS += \
+    device/moto/shamu/overlay_fml
+
 # Device identifier.
 PRODUCT_NAME := fml_shamu
 PRODUCT_DEVICE := shamu
