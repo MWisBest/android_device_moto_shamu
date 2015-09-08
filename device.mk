@@ -37,7 +37,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/moto/shamu/audio_policy.conf:system/etc/audio_policy.conf \
-    device/moto/shamu/audio_effects.conf:system/etc/audio_effects.conf
+    device/moto/shamu/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 PRODUCT_COPY_FILES += \
     device/moto/shamu/media_profiles.xml:system/etc/media_profiles.xml \
@@ -155,13 +155,24 @@ PRODUCT_PACKAGES += \
     libaudio-resampler
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.audio.monitorRotation=true
+    ro.audio.monitorRotation=true \
+    media.aac_51_output_enabled=true \
+    persist.audio.dualmic.config=endfire \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=false
 
 # Audio effects
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    fmas.spkr_6ch=35,20,110 \
+    fmas.spkr_2ch=35,25 \
+    fmas.spkr_angles=10 \
+    fmas.spkr_sgain=0
 
 PRODUCT_PACKAGES += \
     libqomx_core \
@@ -213,6 +224,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.no_wait_for_card=1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.sib16_support=1 \
+    persist.rcs.supported=0 \
+    net.tethering.noprovisioning=true
 
 #Reduce IMS logging
 PRODUCT_PROPERTY_OVERRIDES += \
