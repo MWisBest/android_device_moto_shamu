@@ -20,8 +20,11 @@ $(call inherit-product, device/moto/shamu/aosp_shamu.mk)
 # Inherit APNs list
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
-# Inherit from our custom product configuration
+# Inherit from omni's product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
+
+# Also grab FML-specific config
+$(call inherit-product, vendor/omni/config/fml.mk)
 
 # never dexopt the MotoSignature
 $(call add-product-dex-preopt-module-config,MotoSignatureApp,disable)
