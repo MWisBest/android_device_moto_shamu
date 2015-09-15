@@ -1,0 +1,14 @@
+[
+  {
+    "remote": "mw",
+    "repository": "android_kernel_moto_shamu",
+    "target_path": "kernel/moto/shamu",
+    "revision": "omni-5.1"
+  },
+  {
+    "remote": "mw",
+    "repository": "proprietary_vendor_motorola",
+    "target_path": "vendor/motorola",
+    "revision": "omni-5.1"
+  }
+]

@@ -177,4 +177,4 @@ EXTENDED_FONT_FOOTPRINT := true
 
 -include vendor/motorola/shamu/BoardConfigVendor.mk
 
-include device/moto/shamu/BoardConfigOmni.mk
+include device/moto/shamu/BoardConfigFML.mk

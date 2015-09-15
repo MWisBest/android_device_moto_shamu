@@ -1,4 +1,3 @@
-#
 # Copyright 2014 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +11,23 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-add_lunch_combo aosp_shamu-userdebug
-add_lunch_combo fml_shamu-userdebug
+# Enable workaround for slow rom flash
+BOARD_SUPPRESS_SECURE_ERASE := true
+
+# Healthd
+HEALTHD_ENABLE_TRICOLOR_LED := true
+
+# Kernel
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+TARGET_KERNEL_SOURCE := kernel/moto/shamu
+TARGET_KERNEL_CONFIG := fml_shamu_defconfig
+TARGET_VARIANT_CONFIG := fml_shamu_defconfig
+TARGET_SELINUX_CONFIG := fml_shamu_defconfig
+
+# TWRP
+TW_THEME := portrait_hdpi
+TW_INCLUDE_L_CRYPTO := true
+BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_SCREEN_BLANK_ON_BOOT := true
