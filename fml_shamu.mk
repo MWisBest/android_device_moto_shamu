@@ -12,6 +12,9 @@ $(call inherit-product, device/moto/shamu/aosp_shamu.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     device/moto/shamu/overlay_fml
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.display_type=amoled
+
 # Device identifier.
 PRODUCT_NAME := fml_shamu
 PRODUCT_DEVICE := shamu
