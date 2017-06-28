@@ -150,10 +150,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     libaudio-resampler
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.aac_51_output_enabled=true \
-    ro.audio.monitorRotation=true
-
 # Audio effects
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
@@ -165,6 +161,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     fmas.spkr_2ch=35,25 \
     fmas.spkr_angles=10 \
     fmas.spkr_sgain=0
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.aac_51_output_enabled=true \
+    ro.audio.monitorRotation=true
 
 PRODUCT_PACKAGES += \
     libqomx_core \
